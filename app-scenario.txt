@@ -1,0 +1,110 @@
+Diseño de una API para una app de matchmaking (crear partidas de juegos en línea):
+
+[GET] https//api.gameladder.com/lobbies
+Response: {
+    "lobbies": [
+    {
+        "id": "GM72Q",
+        "name": "Smash CUU",
+        "type": "competitive",
+        "game": "Super Smash Bros"
+        "region": "NA"
+        "players": 104
+    }
+    {
+        "id": "R2D2",
+        "name": "COD casual España",
+        "type": "casual",
+        "game": "Call of Duty"
+        "region": "EU"
+        "players": 298
+    }
+    ]
+}
+Status Code: 200
+
+[GET] https//api.gameladder.com/games
+Response: {
+    "games": [
+    {
+        "code": "SSB",
+        "title": "Super Smash Bros",
+        "category": "Fighting Games",
+        "year": 2018
+    }
+    {
+        "code": "COD",
+        "title": "Call of Duty",
+        "category": "First person shooters",
+        "year": 2003
+    }
+    ]
+}
+Status Code: 200
+
+[POST] https//api.gameladder.com/lobbies
+Body: {
+    "name": "Smash Casual Colombia",
+    "type": "casual",
+    "game": "Super Smash Bros"
+    "region": "SA"
+    "players": 97
+}
+Response: {
+    "id": "KFC23",
+    "name": "Smash Casual Colombia",
+    "type": "casual",
+    "game": "Super Smash Bros"
+    "region": "SA"
+    "players": 97
+}
+Status Code: 201
+
+[POST] https//api.gameladder.com/games
+Body: {
+    "title": "King of Fighters",
+    "category": "Fighting Games",
+    "year": 2002
+}
+Body: {
+    "code": "KOF",
+    "title": "King of Fighters",
+    "category": "Fighting Games",
+    "year": 2002
+}
+Status Code: 201
+
+[PUT] https://api.gameladder.com/lobbies/GM72Q
+Body: {
+    "players": 125
+}
+Response: {
+    "id": "GM72Q",
+    "name": "Smash CUU",
+    "type": "competitive",
+    "game": "Super Smash Bros"
+    "region": "NA"
+    "players": 125
+}
+Status Code: 200
+
+[PUT] https://api.gameladder.com/games/COD
+Body: {
+    "title": "Call of Duty: Modern Warfare"
+    "year": 2019
+}
+Response: {
+    "code": "COD",
+    "title": "Call of Duty",
+    "category": "Call of Duty: Modern Warfare",
+    "year": 2019
+}
+Status Code: 200
+
+[DELETE] https://api.gameladder.com/lobbies/KFC23
+Status Code: 200
+
+[DELETE] https://api.gameladder.com/lobbies/R2D2
+Status Code: 200
+
+
